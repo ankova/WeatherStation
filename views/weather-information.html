@@ -1,0 +1,23 @@
+<h3>{{details.name}}</h3>
+<img ng-src="http://openweathermap.org/img/w/{{details.weather[0].icon}}.png" />
+<h5>Current weather</h5>
+<div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead>
+        <th>City</th>
+        <th>Location</th>
+        <th>Weather conditions</th>
+        <th>Temperature</th>
+        <th>Atmospheric pressure</th>
+        <th>Humidity</th>
+        </thead>
+        <tr class="info">
+            <td>{{details.name}}</td>
+            <td>Long: {{details.coord.lon}} <br/> Lat: {{details.coord.lat}}</td>
+            <td>{{details.weather[0].main}}</td>
+            <td>Temp: {{details.main.temp}}C<br/>Max: {{details.main.temp_max}}C<br/>Min: {{details.main.temp_min}}C</td>
+            <td>{{details.main.pressure}}</td>
+            <td>{{details.main.humidity}}</td>
+        </tr>
+    </table>
+</div>

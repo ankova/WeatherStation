@@ -1,0 +1,35 @@
+<!Doctype html>
+<html lang="en" ng-app="weatherStation">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="app.css">
+    </head>
+    <body class="container-fluid" ng-controller="InfoCtrl">
+        <section>
+            <h2>Weather Station</h2>
+            <nav>
+                <li ng-repeat="result in results | orderBy:order">
+                    <a href="#/home/{{$index}}/{{result.name}}" ng-click="getDetails(result.name)">{{result.name}}</a>
+                </li>
+            </nav>
+            <span>
+                Order by temperature
+            </span>
+            <select ng-model="order">
+                <option value="main.temp">Ascendent</option>
+                <option value="-main.temp">Descendent</option>
+            </select>
+        </section>
+        <div class="view-animate-container">
+            <div ng-view class="view-animate">
+            </div>
+        </div>
+
+        <script src="angular.min.js"></script>
+        <script src="angular-route.js"></script>
+        <script src="angular-animate.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>

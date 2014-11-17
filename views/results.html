@@ -1,0 +1,6 @@
+<h2>Weather</h2>
+<nav>
+    <li ng-repeat="result in results">
+        <a href="#/home/{{$index}}/{{result.name}}" index="{{$index}}">{{result.name}}</a>
+    </li>
+</nav>
